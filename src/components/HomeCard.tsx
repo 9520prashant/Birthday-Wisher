@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom"
 
 export const HomeCard:React.FC = () => {
  const navigate = useNavigate();
- const [name, setName] = useState("");
+ const [name, setName] = useState<string>("");
 
  const handleClick = () =>{
-    if(name === ''){
+    if(name === '' || /\d/.test(name)){
         return alert("You did not Enter any Name!");
     }
      navigate(`/birthday?name=${name}`)
